@@ -18,6 +18,7 @@ user服和device服间也可以相互调用
 客户端只与网关交互，不直接访问后端服务。
 
 工作服务中本人工gorm替代了kratos默认的orm（gorm市面上流行更广、性能强大、文档全）
+<img width="755" height="341" alt="image" src="https://github.com/user-attachments/assets/e41e4125-9c28-49f7-9726-9b660993dc9f" />
 
 关键词 kratos gin  gorm   websocket
 
