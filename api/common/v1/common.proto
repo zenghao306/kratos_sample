@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package api.common.v1;
+option go_package = "kratos_sample/api/common/v1;v1";
+option java_multiple_files = true;
+option java_package = "api.common.v1";
+
+message User {
+  int64 user_id = 1;
+}
+
+message TokenClaims {
+  User user = 1;
+  string ip = 2;
+  string aud = 3;
+  int64 exp = 4;
+  int64 iat = 5;
+  string iss = 6;
+  string jti = 7;
+  int64 nbf = 8;
+  string sub = 9;
+}

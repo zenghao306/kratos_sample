@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+package api.device.v1;
+import "google/api/annotations.proto";
+option go_package = "kratos_sample/api/device/v1;v1";
+option java_multiple_files = true;
+option java_package = "api.device.v1";
+
+service Device {
+	rpc ListDevice (ListDeviceRequest) returns (ListDeviceReply);
+	rpc DeviceGroupAllList(IDRequest) returns(DeviceGroupListResponse);//设备分组列表
+}
+
+message IDRequest {
+	int64 id = 1;
+}
+
+message ListDeviceRequest {
+	uint32 page = 1; // 页索引
+	uint32 page_size = 2; // 页大小
+	string name = 3;
+	int64 group_id = 4;
+	string player_fingerprint = 5; //播放器指纹
+}
+message ListDeviceReply {
+	repeated DeviceInfo data = 1;
+	int64 total = 2;
+}
+
+message DeviceInfo {
+	uint64 id = 1;
+	string name = 2;
+	int64 group_id = 3;
+	string device_id = 4;
+	int64 dnum = 5;
+	string serial = 6;
+	uint32 projectid = 7;
+	string iot_id = 8;
+	string cert_id = 9;
+	string mac = 10;
+	string client_type = 12;
+	uint32 set_shadow = 13;
+	uint32 rotation = 14;
+	string software_version = 15;
+	string app_version = 16;
+	string brand = 17;
+	int32 source = 18;
+	uint64 model_id = 19;
+	string model_name = 20;
+	int32 have_oss = 21;
+	int32 frontend_style = 22;
+	uint32 status = 23;
+	uint64 active_by = 24;
+	int32 active_time = 25;
+	uint64 confirm_by = 26;
+	int64 user_group_id = 27;
+	uint32 create_time = 28;
+	uint32 update_time = 29;
+	int32 screen_capture_interval = 31;
+	int32 auto_screen_capture = 32;
+	string player_fingerprint = 33;
+	bytes player_components = 34;
+}
+
+message DeviceGroupInfo {
+	int32 group_id = 1;
+	string name = 2;
+	int32 lock = 3;
+	int32 count = 4;
+}
+
+message DeviceGroupListResponse{
+	repeated DeviceGroupInfo list = 1;
+}

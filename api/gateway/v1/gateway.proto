@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package api.gateway.v1;
+
+import "google/api/annotations.proto";
+
+option go_package = "kratos_sample/api/gateway/service/v1;v1";
+option java_multiple_files = true;
+option java_package = "api.gateway.v1";
+
+service Gateway {
+	rpc CreateGateway (CreateGatewayRequest) returns (CreateGatewayReply);
+	rpc UpdateGateway (UpdateGatewayRequest) returns (UpdateGatewayReply);
+	rpc DeleteGateway (DeleteGatewayRequest) returns (DeleteGatewayReply);
+	rpc GetGateway (GetGatewayRequest) returns (GetGatewayReply);
+	rpc ListGateway (ListGatewayRequest) returns (ListGatewayReply) {
+		option (google.api.http) = {
+			post: "/device/list"
+			body: "*"
+		};
+	};
+}
+
+message CreateGatewayRequest {}
+message CreateGatewayReply {}
+
+message UpdateGatewayRequest {}
+message UpdateGatewayReply {}
+
+message DeleteGatewayRequest {}
+message DeleteGatewayReply {}
+
+message GetGatewayRequest {}
+message GetGatewayReply {}
+
+message ListGatewayRequest {}
+message ListGatewayReply {}

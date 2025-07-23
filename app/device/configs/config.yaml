@@ -1,0 +1,31 @@
+env:
+  mode: dev
+service:
+  gateway:
+    endpoint: discovery:///gateway.service
+  device:
+    endpoint: discovery:///device.service
+  user:
+    endpoint: discovery:///user.service
+server:
+  gateway_http:        # 网关服配置
+    addr: 0.0.0.0:9801
+    timeout: 5s
+  device_grpc:         #设备服配置
+    addr: 0.0.0.0:9802 #设备服端口号
+    timeout: 1s
+  user_grpc: #设备服配置
+    addr: 0.0.0.0:9803 #设备服端口号
+    timeout: 1s
+data:
+  database:
+    driver: mysql
+    source: root:123456@tcp(127.0.0.1:3306)/test_db?parseTime=True&loc=Local
+  redis:
+    addr: 127.0.0.1:6379
+    password: ""
+    read_timeout: 0.2s
+    write_timeout: 0.2s
+etcd:
+  address: 127.0.0.1:2379
+

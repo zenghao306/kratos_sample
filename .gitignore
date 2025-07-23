@@ -1,0 +1,59 @@
+# Reference https://github.com/github/gitignore/blob/master/Go.gitignore
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the comment below to include it)
+vendor/
+
+# Go workspace file
+go.work
+
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# OS General
+Thumbs.db
+.DS_Store
+
+# project
+*.cert
+*.key
+*.log
+bin/
+
+# Develop tools
+.vscode/
+.idea/
+*.swp
+api/dataclearing/service/v1/dataclearing.proto
+app/dataclearing/Dockerfile
+app/dataclearing/Makefile
+app/dataclearing/cmd/dataclearing/main.go
+app/dataclearing/cmd/dataclearing/wire.go
+app/dataclearing/cmd/dataclearing/wire_gen.go
+app/dataclearing/configs/config.yaml
+app/dataclearing/internal/biz/biz.go
+app/dataclearing/internal/biz/greeter.go
+app/dataclearing/internal/conf/conf.pb.go
+app/dataclearing/internal/conf/conf.proto
+app/dataclearing/internal/data/data.go
+app/dataclearing/internal/data/greeter.go
+app/dataclearing/internal/server/grpc.go
+app/dataclearing/internal/server/http.go
+app/dataclearing/internal/server/server.go
+app/dataclearing/internal/service/greeter.go
+app/dataclearing/internal/service/service.go
+configs/common/mysql.yaml
+configs/common/redis.yaml
+configs/development/images.yaml
