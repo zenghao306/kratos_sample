@@ -9,7 +9,6 @@ import (
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/google/wire"
-	"kratos_sample/app/device/internal/server"
 	"kratos_sample/app/gateway/internal/router"
 	"kratos_sample/app/gateway/internal/server"
 )
